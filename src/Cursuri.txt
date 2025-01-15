@@ -1,0 +1,2 @@
+1,Rezistenta Materialelor, calculul reacţiunilor; calculul caracteristicilor geometrice,1,1
+2,Informatica,Structuri de date si algoritmi,2,2

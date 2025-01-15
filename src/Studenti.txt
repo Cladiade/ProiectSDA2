@@ -1,0 +1,4 @@
+1,Popescu,Maria,2,3,popescu.maria@gmail.com,(parola criptata)
+2,Popa,Ioana,1,2,popa.ioana@gmail.com,(parola criptata)
+3,Cladiade,Gabriel,1,2,andreiciorbaru123@yahoo.com,gabi2004
+4,Balan,Dan,1,2,danbalan@gmail.ro,chicaBomb
