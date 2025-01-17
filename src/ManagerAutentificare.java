@@ -16,13 +16,13 @@ public class ManagerAutentificare {
     public Object login(String username, String password) {
         for (Student student : studenti) {
             if (student.getUsername().equals(username) && student.getPassword().equals(password)) {
-                return student; // Login reușit pentru student
+                return student;
             }
         }
 
         for (Profesor profesor : profesori) {
             if (profesor.getUsername().equals(username) && profesor.getPassword().equals(password)) {
-                return profesor; // Login reușit pentru profesor
+                return profesor;
             }
         }
 

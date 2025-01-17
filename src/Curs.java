@@ -17,27 +17,31 @@ public class Curs {
         this.note = new HashMap<>();
     }
 
-    public int getId() {
+   synchronized public int getId() {
         return id;
     }
 
-    public String getNume() {
+    synchronized public String getNume() {
         return nume;
     }
 
-    public int getAn() {
+    synchronized public int getAn() {
         return an;
     }
 
-    public Map<Integer, Integer> getNote() {
+    synchronized public Map<Integer, Integer> getNote() {
         return note;
     }
 
-    public void adaugaStudent(int idStudent) {
+    synchronized public void adaugaStudent(int idStudent) {
         note.put(idStudent, -1);
     }
 
-    public void noteazaStudent(int idStudent, int nota) {
+    synchronized public void adaugaStudent(int idStudent, int nota) {
+        note.put(idStudent, nota);
+    }
+
+    synchronized public void noteazaStudent(int idStudent, int nota) {
         if (note.containsKey(idStudent)) {
             note.put(idStudent, nota);
         } else {
@@ -45,15 +49,15 @@ public class Curs {
         }
     }
 
-    public String getDescriere() {
+    synchronized public String getDescriere() {
         return descriere;
     }
 
-    public int getIdProfesor() {
+    synchronized public int getIdProfesor() {
         return idProfesor;
     }
 
-    public List<Integer> getIdStudenti() {
+    synchronized public List<Integer> getIdStudenti() {
         return new ArrayList<>(note.keySet());
     }
 }

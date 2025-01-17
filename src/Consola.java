@@ -14,7 +14,7 @@ public class Consola {
         this.profesori = profesori;
     }
 
-    public void start() {
+   synchronized public void start() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Selectati optiunea dorita:");
@@ -63,7 +63,7 @@ public class Consola {
                         System.out.println("Introduceti parola:");
                         String password1 = scanner.nextLine();
 
-                        if (auth.registerStudent(nume, prenume, grupa, an, username1, password1, "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\src\\Studenti.txt")) {
+                        if (auth.registerStudent(nume, prenume, grupa, an, username1, password1, "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\ProiectSDA2\\src\\Studenti.txt")) {
                             System.out.println("Inregistrare reusita");
                         } else {
                             System.out.println("Eroare: Username-ul exista deja");
@@ -78,7 +78,7 @@ public class Consola {
                         System.out.println("Introduceti parola:");
                         String password2 = scanner.nextLine();
 
-                        if (auth.registerProfesor(nume, prenume, username2, password2, "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\src\\Profesori.txt")) {
+                        if (auth.registerProfesor(nume, prenume, username2, password2, "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\ProiectSDA2\\src\\Profesori.txt")) {
                             System.out.println("Inregistrare reusita");
                         } else {
                             System.out.println("Eroare: Username-ul exista deja");
@@ -137,7 +137,7 @@ public class Consola {
     }
 
     private void DashboardProfesor(Scanner scanner, Profesor profesor) {
-        DashboardProfesor dashboard = new DashboardProfesor(cursuri,studenti, profesor.getId(), new FileDisplay(), "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\src\\Cursuri.txt", "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\src\\Note.txt");
+        DashboardProfesor dashboard = new DashboardProfesor(cursuri,studenti, profesor.getId(), new FileDisplay(), "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\ProiectSDA2\\src\\Cursuri.txt", "C:\\Users\\Gabi\\Desktop\\Teme Facultate\\Teme SDA\\Proiect SDA\\ProiectSDA2\\src\\Note.txt");
 
         while (true) {
             System.out.println("Dashboard Profesor:");

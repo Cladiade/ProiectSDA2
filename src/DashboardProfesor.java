@@ -18,7 +18,7 @@ public class DashboardProfesor {
         this.studenti = studenti;
     }
 
-    public void afisareCursuri() {
+   synchronized public void afisareCursuri() {
         System.out.println("Cursurile predate:");
         for (Curs curs : cursuri) {
             if (curs.getIdProfesor() == idProfesor) {
@@ -27,7 +27,7 @@ public class DashboardProfesor {
         }
     }
 
-    public void afisareStudenti(int idCurs) {
+    synchronized  public void afisareStudenti(int idCurs) {
         Curs cursGasit = null;
         for (Curs curs : cursuri) {
             if (curs.getId() == idCurs && curs.getIdProfesor() == idProfesor) {
@@ -57,7 +57,7 @@ public class DashboardProfesor {
         }
     }
 
-    public void noteazaStudent(int idCurs, int idStudent, int nota) {
+    synchronized  public void noteazaStudent(int idCurs, int idStudent, int nota) {
         Curs cursGasit = null;
         for (Curs curs : cursuri) {
             if (curs.getId() == idCurs && curs.getIdProfesor() == idProfesor) {

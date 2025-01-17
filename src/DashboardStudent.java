@@ -10,7 +10,7 @@ public class DashboardStudent {
         this.idStudent = idStudent;
     }
 
-    public void vizualizareCursuri(int an) {
+    synchronized  public void vizualizareCursuri(int an) {
         List<Curs> cursuriAn = cursuri.stream()
                 .filter(curs -> curs.getAn() == an)
                 .collect(Collectors.toList());
@@ -21,7 +21,7 @@ public class DashboardStudent {
         }
     }
 
-    public void vizualizareNote() {
+    synchronized public void vizualizareNote() {
         System.out.println("Note cursuri:");
         for (Curs curs : cursuri) {
             Integer nota = curs.getNote().get(idStudent);
@@ -30,7 +30,7 @@ public class DashboardStudent {
         }
     }
 
-    public void calculareMedie() {
+    synchronized public void calculareMedie() {
         double suma = 0;
         int numarCursuri = 0;
 
@@ -44,13 +44,13 @@ public class DashboardStudent {
 
         if (numarCursuri > 0) {
             double media = suma / numarCursuri;
-            System.out.printf("Media pentru cursurile cu note este: ", media);
+            System.out.println("Media pentru cursurile cu note este: " + media);
         } else {
             System.out.println("Nu exista note suficiente pentru calcularea mediei");
         }
     }
 
-    public void identificareRestante() {
+    synchronized public void identificareRestante() {
         System.out.println("Materii cu restante: ");
         boolean areRestante = false;
 
